@@ -48,7 +48,6 @@ const handler = async (req: Request): Promise<Response> => {
       formData.instagramUsername,
       formData.followerCount,
       formData.trafficRange,
-      formData.email,
       formData.productsToPromote.join(", "),
       formData.countryOfResidence,
       formData.followersLocation,
