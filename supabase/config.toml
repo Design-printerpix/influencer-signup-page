@@ -1,1 +1,4 @@
 project_id = "iprombyqmubcnldhcvju"
+
+[functions.submit-influencer-form]
+verify_jwt = false
