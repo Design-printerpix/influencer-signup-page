@@ -71,8 +71,13 @@ const handler = async (req: Request): Promise<Response> => {
 
     if (!sheetsResponse.ok) {
       const errorText = await sheetsResponse.text();
-      console.error("Google Sheets API error:", errorText);
-      throw new Error("Failed to save to Google Sheets");
+      console.error("Google Sheets API error:", {
+        status: sheetsResponse.status,
+        statusText: sheetsResponse.statusText,
+        error: errorText,
+        url: `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/Sheet1:append?valueInputOption=RAW&key=${googleSheetsApiKey}`
+      });
+      throw new Error(`Google Sheets API failed: ${sheetsResponse.status} - ${errorText}`);
     }
 
     const sheetsResult = await sheetsResponse.json();
