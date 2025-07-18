@@ -303,19 +303,23 @@ export const InfluencerSignupForm = () => {
                   {products.map((product) => (
                       <div
                         key={product}
-                        className={`p-3 rounded-lg border cursor-pointer transition-all ${
+                        className={`p-3 rounded-lg border transition-all ${
                           selectedProducts.includes(product)
                             ? "border-instagram-purple bg-gradient-subtle"
                             : "border-border hover:border-instagram-purple/50"
                         }`}
-                        onClick={() => handleProductToggle(product)}
                       >
                         <div className="flex items-center space-x-2">
                           <Checkbox
                             checked={selectedProducts.includes(product)}
                             onCheckedChange={() => handleProductToggle(product)}
                           />
-                          <span className="text-sm font-medium">{product}</span>
+                          <label 
+                            className="text-sm font-medium cursor-pointer flex-1"
+                            onClick={() => handleProductToggle(product)}
+                          >
+                            {product}
+                          </label>
                         </div>
                       </div>
                   ))}
