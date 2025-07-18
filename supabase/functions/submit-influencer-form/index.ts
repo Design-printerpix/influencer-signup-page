@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.38.4';
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -33,60 +34,36 @@ const handler = async (req: Request): Promise<Response> => {
       throw new Error("Missing required fields");
     }
 
-    // Get Google Sheets API key from environment
-    const googleSheetsApiKey = Deno.env.get("GOOGLE_SHEETS_API_KEY");
-    const spreadsheetId = Deno.env.get("GOOGLE_SHEETS_SPREADSHEET_ID");
-    
-    if (!googleSheetsApiKey || !spreadsheetId) {
-      console.error("Missing Google Sheets configuration");
-      throw new Error("Server configuration error");
-    }
+    // Initialize Supabase client
+    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+    const supabaseKey = Deno.env.get("SUPABASE_ANON_KEY")!;
+    const supabase = createClient(supabaseUrl, supabaseKey);
 
-    // Prepare data for Google Sheets
-    const rowData = [
-      formData.timestamp,
-      formData.instagramUsername,
-      formData.followerCount,
-      formData.trafficRange,
-      formData.productsToPromote.join(", "),
-      formData.countryOfResidence,
-      formData.followersLocation,
-      formData.consent ? "Yes" : "No",
-      formData.email
-    ];
-
-    // Google Sheets API call
-    const sheetsResponse = await fetch(
-      `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/Sheet1:append?valueInputOption=RAW&key=${googleSheetsApiKey}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          values: [rowData],
-        }),
-      }
-    );
-
-    if (!sheetsResponse.ok) {
-      const errorText = await sheetsResponse.text();
-      console.error("Google Sheets API error:", {
-        status: sheetsResponse.status,
-        statusText: sheetsResponse.statusText,
-        error: errorText,
-        url: `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/Sheet1:append?valueInputOption=RAW&key=${googleSheetsApiKey}`
+    // Insert data into Supabase table
+    const { data, error } = await supabase
+      .from('influencer_applications')
+      .insert({
+        instagram_username: formData.instagramUsername,
+        follower_count: formData.followerCount,
+        traffic_range: formData.trafficRange,
+        email: formData.email,
+        products_to_promote: formData.productsToPromote,
+        country_of_residence: formData.countryOfResidence,
+        followers_location: formData.followersLocation,
+        consent: formData.consent,
       });
-      throw new Error(`Google Sheets API failed: ${sheetsResponse.status} - ${errorText}`);
+
+    if (error) {
+      console.error("Supabase insert error:", error);
+      throw new Error(`Failed to save application: ${error.message}`);
     }
 
-    const sheetsResult = await sheetsResponse.json();
-    console.log("Successfully saved to Google Sheets:", sheetsResult);
+    console.log("Successfully saved to Supabase:", data);
 
     return new Response(
       JSON.stringify({ 
         success: true, 
-        message: "Form submitted successfully" 
+        message: "Application submitted successfully" 
       }),
       {
         status: 200,
