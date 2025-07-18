@@ -51,7 +51,8 @@ const handler = async (req: Request): Promise<Response> => {
       formData.productsToPromote.join(", "),
       formData.countryOfResidence,
       formData.followersLocation,
-      formData.consent ? "Yes" : "No"
+      formData.consent ? "Yes" : "No",
+      formData.email
     ];
 
     // Google Sheets API call
