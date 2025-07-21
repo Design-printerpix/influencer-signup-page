@@ -24,7 +24,7 @@ export type Database = {
           followers_location: string
           id: string
           instagram_username: string
-          products_to_promote: string[]
+          products_to_promote: string
           traffic_range: string
           updated_at: string
         }
@@ -37,7 +37,7 @@ export type Database = {
           followers_location: string
           id?: string
           instagram_username: string
-          products_to_promote: string[]
+          products_to_promote: string
           traffic_range: string
           updated_at?: string
         }
@@ -50,7 +50,7 @@ export type Database = {
           followers_location?: string
           id?: string
           instagram_username?: string
-          products_to_promote?: string[]
+          products_to_promote?: string
           traffic_range?: string
           updated_at?: string
         }
