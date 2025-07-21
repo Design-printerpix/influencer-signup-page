@@ -38,7 +38,7 @@ const products = [
   "Blankets",
   "Photobooks", 
   "Canvas",
-  "Mugs",
+  "Calendars",
   "Framed Prints",
   "Metal Prints"
 ];
@@ -57,7 +57,6 @@ const formSchema = z.object({
   productsToPromote: z.string().min(1, "Please select a product"),
   countryOfResidence: z.string().min(1, "Please select your country of residence"),
   followersLocation: z.string().min(1, "Please select where most of your followers are based"),
-  consent: z.boolean().refine(val => val === true, "You must agree to be contacted"),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -78,7 +77,6 @@ export const InfluencerSignupForm = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       productsToPromote: "",
-      consent: false,
     },
   });
 
@@ -268,14 +266,14 @@ export const InfluencerSignupForm = () => {
 
               {/* Followers Location */}
               <div className="space-y-2">
-                <Label className="flex items-center gap-2 font-medium">
-                  <Globe className="w-4 h-4 text-instagram-orange" />
-                  Where Most of Your Followers Are Based
-                </Label>
-                <Select onValueChange={(value) => setValue("followersLocation", value)}>
-                  <SelectTrigger className="h-12 text-base">
-                    <SelectValue placeholder="Select followers' main location" />
-                  </SelectTrigger>
+                 <Label className="flex items-center gap-2 font-medium">
+                   <Globe className="w-4 h-4 text-instagram-orange" />
+                   Where &gt;50% of Your Followers Are Based
+                 </Label>
+                 <Select onValueChange={(value) => setValue("followersLocation", value)}>
+                   <SelectTrigger className="h-12 text-base">
+                     <SelectValue placeholder="Select Main Location" />
+                   </SelectTrigger>
                   <SelectContent>
                     {countries.map((country) => (
                       <SelectItem key={country} value={country}>
@@ -324,25 +322,12 @@ export const InfluencerSignupForm = () => {
                  )}
                </div>
 
-              {/* Consent */}
-              <div className="space-y-3">
-                <div className="flex items-start space-x-3">
-                  <Checkbox
-                    id="consent"
-                    checked={watchedValues.consent}
-                    onCheckedChange={(checked) => setValue("consent", !!checked)}
-                  />
-                  <Label
-                    htmlFor="consent"
-                    className="text-sm leading-5 cursor-pointer"
-                  >
-                    I agree to be contacted via email
-                  </Label>
-                </div>
-                {errors.consent && (
-                  <p className="text-sm text-destructive">{errors.consent.message}</p>
-                )}
-              </div>
+               {/* Contact Notice */}
+               <div className="space-y-3">
+                 <p className="text-sm leading-5 text-muted-foreground">
+                   We will be contacting you by email
+                 </p>
+               </div>
 
               {/* Submit Button */}
               <Button
