@@ -102,9 +102,9 @@ export const InfluencerSignupForm = () => {
         timestamp: new Date().toISOString(),
       };
 
-      // Submit to Google Sheets via edge function
+      // Submit to Supabase via edge function
       const response = await fetch(
-        "https://iprombyqmubcnldhcvju.supabase.co/functions/v1/submit-influencer-form",
+        "https://rrbbkiaguqmcgwvibiqv.supabase.co/functions/v1/submit-influencer-form",
         {
           method: "POST",
           headers: {
