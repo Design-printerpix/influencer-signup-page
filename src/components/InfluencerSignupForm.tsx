@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
@@ -53,8 +54,7 @@ const formSchema = z.object({
   email: z.string()
     .min(1, "Email is required")
     .email("Please enter a valid email address"),
-  productsToPromote: z.array(z.string())
-    .min(1, "Please select at least one product"),
+  productsToPromote: z.string().min(1, "Please select a product"),
   countryOfResidence: z.string().min(1, "Please select your country of residence"),
   followersLocation: z.string().min(1, "Please select where most of your followers are based"),
   consent: z.boolean().refine(val => val === true, "You must agree to be contacted"),
@@ -64,7 +64,7 @@ type FormData = z.infer<typeof formSchema>;
 
 export const InfluencerSignupForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
+  const [selectedProduct, setSelectedProduct] = useState<string>("");
   const { toast } = useToast();
 
   const {
@@ -77,20 +77,16 @@ export const InfluencerSignupForm = () => {
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      productsToPromote: [],
+      productsToPromote: "",
       consent: false,
     },
   });
 
   const watchedValues = watch();
 
-  const handleProductToggle = (product: string) => {
-    const updated = selectedProducts.includes(product)
-      ? selectedProducts.filter(p => p !== product)
-      : [...selectedProducts, product];
-    
-    setSelectedProducts(updated);
-    setValue("productsToPromote", updated);
+  const handleProductSelect = (product: string) => {
+    setSelectedProduct(product);
+    setValue("productsToPromote", product);
   };
 
   const onSubmit = async (data: FormData) => {
@@ -132,7 +128,7 @@ export const InfluencerSignupForm = () => {
       });
 
       reset();
-      setSelectedProducts([]);
+      setSelectedProduct("");
       
     } catch (error) {
       console.error("Submission error:", error);
@@ -293,41 +289,40 @@ export const InfluencerSignupForm = () => {
                 )}
               </div>
 
-              {/* Products to Promote */}
-              <div className="space-y-3">
-                <Label className="flex items-center gap-2 font-medium">
-                  <Package className="w-4 h-4 text-instagram-purple" />
-                  Pick a Free Product to Promote
-                </Label>
-                <div className="grid grid-cols-2 gap-3">
-                  {products.map((product) => (
-                      <div
-                        key={product}
-                        className={`p-3 rounded-lg border transition-all ${
-                          selectedProducts.includes(product)
-                            ? "border-instagram-purple bg-gradient-subtle"
-                            : "border-border hover:border-instagram-purple/50"
-                        }`}
-                      >
-                        <div className="flex items-center space-x-2">
-                          <Checkbox
-                            checked={selectedProducts.includes(product)}
-                            onCheckedChange={() => handleProductToggle(product)}
-                          />
-                          <label 
-                            className="text-sm font-medium cursor-pointer flex-1"
-                            onClick={() => handleProductToggle(product)}
-                          >
-                            {product}
-                          </label>
-                        </div>
-                      </div>
-                  ))}
-                </div>
-                {errors.productsToPromote && (
-                  <p className="text-sm text-destructive">{errors.productsToPromote.message}</p>
-                )}
-              </div>
+               {/* Products to Promote */}
+               <div className="space-y-3">
+                 <Label className="flex items-center gap-2 font-medium">
+                   <Package className="w-4 h-4 text-instagram-purple" />
+                   Pick a Free Product to Promote
+                 </Label>
+                 <RadioGroup value={selectedProduct} onValueChange={handleProductSelect}>
+                   <div className="grid grid-cols-2 gap-3">
+                     {products.map((product) => (
+                         <div
+                           key={product}
+                           className={`p-3 rounded-lg border transition-all ${
+                             selectedProduct === product
+                               ? "border-instagram-purple bg-gradient-subtle"
+                               : "border-border hover:border-instagram-purple/50"
+                           }`}
+                         >
+                           <div className="flex items-center space-x-2">
+                             <RadioGroupItem value={product} id={product} />
+                             <Label 
+                               htmlFor={product}
+                               className="text-sm font-medium cursor-pointer flex-1"
+                             >
+                               {product}
+                             </Label>
+                           </div>
+                         </div>
+                     ))}
+                   </div>
+                 </RadioGroup>
+                 {errors.productsToPromote && (
+                   <p className="text-sm text-destructive">{errors.productsToPromote.message}</p>
+                 )}
+               </div>
 
               {/* Consent */}
               <div className="space-y-3">
