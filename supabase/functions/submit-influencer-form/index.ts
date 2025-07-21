@@ -54,6 +54,12 @@ const handler = async (req: Request): Promise<Response> => {
 
     if (error) {
       console.error("Supabase insert error:", error);
+      
+      // Handle duplicate email constraint violation
+      if (error.code === '23505' && error.message?.includes('unique_email_constraint')) {
+        throw new Error("An application with this email address has already been submitted.");
+      }
+      
       throw new Error(`Failed to save application: ${error.message}`);
     }
 
