@@ -14,48 +14,7 @@ export type Database = {
   }
   public: {
     Tables: {
-      influencer_applications: {
-        Row: {
-          consent: boolean
-          country_of_residence: string
-          created_at: string
-          email: string
-          follower_count: number
-          followers_location: string
-          id: string
-          instagram_username: string
-          products_to_promote: string
-          traffic_range: string
-          updated_at: string
-        }
-        Insert: {
-          consent?: boolean
-          country_of_residence: string
-          created_at?: string
-          email: string
-          follower_count: number
-          followers_location: string
-          id?: string
-          instagram_username: string
-          products_to_promote: string
-          traffic_range: string
-          updated_at?: string
-        }
-        Update: {
-          consent?: boolean
-          country_of_residence?: string
-          created_at?: string
-          email?: string
-          follower_count?: number
-          followers_location?: string
-          id?: string
-          instagram_username?: string
-          products_to_promote?: string
-          traffic_range?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
