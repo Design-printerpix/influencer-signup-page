@@ -11,10 +11,9 @@ interface InfluencerFormData {
   followerCount: number;
   trafficRange: string;
   email: string;
-  productsToPromote: string[];
+  productsToPromote: string;
   countryOfResidence: string;
   followersLocation: string;
-  consent: boolean;
   timestamp: string;
 }
 
@@ -30,7 +29,7 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Received influencer form submission:", formData);
 
     // Validate required fields
-    if (!formData.instagramUsername || !formData.email || !formData.consent) {
+    if (!formData.instagramUsername || !formData.email) {
       throw new Error("Missing required fields");
     }
 
@@ -50,7 +49,7 @@ const handler = async (req: Request): Promise<Response> => {
         products_to_promote: formData.productsToPromote,
         country_of_residence: formData.countryOfResidence,
         followers_location: formData.followersLocation,
-        consent: formData.consent,
+        consent: true, // Default to true since we inform users they will be contacted
       });
 
     if (error) {
