@@ -378,7 +378,7 @@ export const InfluencerSignupForm = () => {
               rel="noopener noreferrer"
               className="flex flex-col items-center p-3 rounded-lg hover:bg-muted transition-colors"
             >
-              <span className="text-2xl mb-1">🇮🇳</span>
+              <span className="text-2xl mb-1">india flag</span>
               <span className="text-sm font-medium text-center">India</span>
             </a>
             <a
