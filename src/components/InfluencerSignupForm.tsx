@@ -367,82 +367,73 @@ export const InfluencerSignupForm = () => {
         </Card>
 
         {/* Regional Sites Section */}
-        <div className="mt-8 p-4 bg-card rounded-lg border shadow-soft">
-          <h3 className="text-lg font-semibold text-center mb-4">
-            Country of residence? Click below to visit your regional site:
+        <div className="mt-8 p-6 bg-card rounded-lg border shadow-soft">
+          <h3 className="text-lg font-semibold text-center mb-6">
+            PRINTERPIX WORLDWIDE:
           </h3>
-          <div className="flex justify-center items-center gap-6 flex-wrap">
-            <a
-              href="https://www.printerpix.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-3xl hover:scale-110 transition-transform duration-200"
-            >
-              🇮🇳
-            </a>
-            <a
-              href="https://www.printerpix.de"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-3xl hover:scale-110 transition-transform duration-200"
-            >
-              🇩🇪
-            </a>
-            <a
-              href="https://www.printerpix.it"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-3xl hover:scale-110 transition-transform duration-200"
-            >
-              🇮🇹
-            </a>
+          <div className="flex justify-center items-center gap-8 flex-wrap">
             <a
               href="https://www.printerpix.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-3xl hover:scale-110 transition-transform duration-200"
+              className="flex flex-col items-center hover-scale"
             >
-              🇺🇸
+              <span className="text-2xl mb-2">🇺🇸</span>
+              <span className="text-xs font-medium text-center">United States</span>
             </a>
             <a
               href="https://www.printerpix.co.uk"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-3xl hover:scale-110 transition-transform duration-200"
+              className="flex flex-col items-center hover-scale"
             >
-              🇬🇧
-            </a>
-            <a
-              href="https://www.printerpix.es"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-3xl hover:scale-110 transition-transform duration-200"
-            >
-              🇪🇸
-            </a>
-            <a
-              href="https://www.printerpix.nl"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-3xl hover:scale-110 transition-transform duration-200"
-            >
-              🇳🇱
-            </a>
-            <a
-              href="https://www.printerpix.ae"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-3xl hover:scale-110 transition-transform duration-200"
-            >
-              🇦🇪
+              <span className="text-2xl mb-2">🇬🇧</span>
+              <span className="text-xs font-medium text-center">United Kingdom</span>
             </a>
             <a
               href="https://www.printerpix.fr"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-3xl hover:scale-110 transition-transform duration-200"
+              className="flex flex-col items-center hover-scale"
             >
-              🇫🇷
+              <span className="text-2xl mb-2">🇫🇷</span>
+              <span className="text-xs font-medium text-center">France</span>
+            </a>
+            <a
+              href="https://www.printerpix.it"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center hover-scale"
+            >
+              <span className="text-2xl mb-2">🇮🇹</span>
+              <span className="text-xs font-medium text-center">Italy</span>
+            </a>
+            <a
+              href="https://www.printerpix.es"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center hover-scale"
+            >
+              <span className="text-2xl mb-2">🇪🇸</span>
+              <span className="text-xs font-medium text-center">Spain</span>
+            </a>
+            <a
+              href="https://www.printerpix.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center hover-scale"
+            >
+              <span className="text-2xl mb-2">🇩🇪</span>
+              <span className="text-xs font-medium text-center">Germany</span>
+            </a>
+            <a
+              href="https://www.printerpix.nl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center hover-scale"
+            >
+              <span className="text-2xl mb-2">🇳🇱</span>
+              <span className="text-xs font-medium text-center">Netherlands</span>
             </a>
           </div>
         </div>
