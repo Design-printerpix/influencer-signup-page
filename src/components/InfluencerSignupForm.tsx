@@ -34,6 +34,15 @@ const trafficRanges = [
   "500,000 – 1,000,000+"
 ];
 
+const followerRanges = [
+  "10,000-25,000",
+  "25,000-50,000",
+  "50,000-80,000",
+  "80,000-100,000",
+  "100,000-500,000",
+  "500,000+"
+];
+
 const products = [
   "Blankets",
   "Photobooks", 
@@ -47,9 +56,7 @@ const formSchema = z.object({
   instagramUsername: z.string()
     .min(1, "Instagram username is required")
     .regex(/^@?[a-zA-Z0-9._]+$/, "Please enter a valid Instagram username"),
-  followerCount: z.number()
-    .min(1, "Follower count is required")
-    .int("Please enter a whole number"),
+  followerCount: z.string().min(1, "Please select your follower count range"),
   trafficRange: z.string().min(1, "Please select your traffic range"),
   email: z.string()
     .min(1, "Email is required")
@@ -193,17 +200,22 @@ export const InfluencerSignupForm = () => {
 
               {/* Follower Count */}
               <div className="space-y-2">
-                <Label htmlFor="followerCount" className="flex items-center gap-2 font-medium">
+                <Label className="flex items-center gap-2 font-medium">
                   <Users className="w-4 h-4 text-instagram-pink" />
                   Follower Count
                 </Label>
-                <Input
-                  id="followerCount"
-                  type="number"
-                  placeholder="e.g. 10,000"
-                  {...register("followerCount", { valueAsNumber: true })}
-                  className="h-12 text-base"
-                />
+                <Select onValueChange={(value) => setValue("followerCount", value)}>
+                  <SelectTrigger className="h-12 text-base">
+                    <SelectValue placeholder="Select your follower count range" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {followerRanges.map((range) => (
+                      <SelectItem key={range} value={range}>
+                        {range}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
                 {errors.followerCount && (
                   <p className="text-sm text-destructive">{errors.followerCount.message}</p>
                 )}
