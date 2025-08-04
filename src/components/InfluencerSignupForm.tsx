@@ -15,8 +15,8 @@ import { Loader2, Instagram, Users, Mail, Package, Globe } from "lucide-react";
 // Flag imports
 import usFlag from "@/assets/flags/us.png";
 import gbFlag from "@/assets/flags/gb.png";
-import frFlag from "@/assets/flags/fr-new.png";
-import itFlag from "@/assets/flags/it-new.png";
+import frFlag from "@/assets/flags/fr-circular.png";
+import itFlag from "@/assets/flags/it-circular.png";
 import esFlag from "@/assets/flags/es.png";
 import deFlag from "@/assets/flags/de.png";
 import nlFlag from "@/assets/flags/nl.png";
@@ -423,7 +423,7 @@ export const InfluencerSignupForm = () => {
               className="flex flex-col items-center gap-1 hover:scale-105 transition-transform flex-shrink-0"
             >
               <div className="w-8 h-8 rounded-full overflow-hidden shadow-md border border-white">
-                <img src={frFlag} alt="France" className="w-full h-full object-cover scale-110" style={{objectPosition: '85% center'}} />
+                <img src={frFlag} alt="France" className="w-full h-full object-cover" />
               </div>
               <span className="text-xs font-medium text-foreground">FR</span>
             </a>
@@ -434,7 +434,7 @@ export const InfluencerSignupForm = () => {
               className="flex flex-col items-center gap-1 hover:scale-105 transition-transform flex-shrink-0"
             >
               <div className="w-8 h-8 rounded-full overflow-hidden shadow-md border border-white">
-                <img src={itFlag} alt="Italy" className="w-full h-full object-cover scale-110" style={{objectPosition: '15% center'}} />
+                <img src={itFlag} alt="Italy" className="w-full h-full object-cover" />
               </div>
               <span className="text-xs font-medium text-foreground">IT</span>
             </a>
