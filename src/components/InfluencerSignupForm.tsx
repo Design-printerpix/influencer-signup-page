@@ -389,11 +389,11 @@ export const InfluencerSignupForm = () => {
         </Card>
 
         {/* Regional Sites Section */}
-        <div className="mt-8 p-4 bg-card rounded-lg border shadow-soft">
+        <div className="mt-8 p-6 bg-card rounded-lg border shadow-soft">
           <h3 className="text-sm font-medium text-center mb-3 text-muted-foreground">
             Country of residence? Click below to visit your regional site:
           </h3>
-          <div className="flex items-center justify-center gap-3 flex-nowrap overflow-x-auto">
+          <div className="flex items-center justify-center gap-4 flex-nowrap">
             <a
               href="https://www.printerpix.com"
               target="_blank"
@@ -423,7 +423,7 @@ export const InfluencerSignupForm = () => {
               className="flex flex-col items-center gap-1 hover:scale-105 transition-transform flex-shrink-0"
             >
               <div className="w-8 h-8 rounded-full overflow-hidden shadow-md border border-white">
-                <img src={frFlag} alt="France" className="w-full h-full object-cover scale-110" style={{objectPosition: '30% center'}} />
+                <img src={frFlag} alt="France" className="w-full h-full object-cover scale-110" style={{objectPosition: '85% center'}} />
               </div>
               <span className="text-xs font-medium text-foreground">FR</span>
             </a>
@@ -434,7 +434,7 @@ export const InfluencerSignupForm = () => {
               className="flex flex-col items-center gap-1 hover:scale-105 transition-transform flex-shrink-0"
             >
               <div className="w-8 h-8 rounded-full overflow-hidden shadow-md border border-white">
-                <img src={itFlag} alt="Italy" className="w-full h-full object-cover scale-110" style={{objectPosition: '70% center'}} />
+                <img src={itFlag} alt="Italy" className="w-full h-full object-cover scale-110" style={{objectPosition: '15% center'}} />
               </div>
               <span className="text-xs font-medium text-foreground">IT</span>
             </a>
