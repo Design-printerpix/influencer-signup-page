@@ -390,97 +390,97 @@ export const InfluencerSignupForm = () => {
 
         {/* Regional Sites Section */}
         <div className="mt-8 p-4 bg-card rounded-lg border shadow-soft">
-          <h3 className="text-sm font-medium text-center mb-4 text-muted-foreground">
+          <h3 className="text-sm font-medium text-center mb-3 text-muted-foreground">
             Country of residence? Click below to visit your regional site:
           </h3>
-          <div className="flex items-center justify-center gap-4 flex-wrap">
+          <div className="flex items-center justify-center gap-3 flex-nowrap overflow-x-auto">
             <a
               href="https://www.printerpix.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 hover:scale-105 transition-transform"
+              className="flex flex-col items-center gap-1 hover:scale-105 transition-transform flex-shrink-0"
             >
-              <div className="w-12 h-12 rounded-full overflow-hidden shadow-md border-2 border-white">
+              <div className="w-8 h-8 rounded-full overflow-hidden shadow-md border border-white">
                 <img src={usFlag} alt="United States" className="w-full h-full object-cover" />
               </div>
-              <span className="text-xs font-medium text-foreground">United States</span>
+              <span className="text-xs font-medium text-foreground">US</span>
             </a>
             <a
               href="https://www.printerpix.co.uk"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 hover:scale-105 transition-transform"
+              className="flex flex-col items-center gap-1 hover:scale-105 transition-transform flex-shrink-0"
             >
-              <div className="w-12 h-12 rounded-full overflow-hidden shadow-md border-2 border-white">
+              <div className="w-8 h-8 rounded-full overflow-hidden shadow-md border border-white">
                 <img src={gbFlag} alt="United Kingdom" className="w-full h-full object-cover" />
               </div>
-              <span className="text-xs font-medium text-foreground">United Kingdom</span>
+              <span className="text-xs font-medium text-foreground">UK</span>
             </a>
             <a
               href="https://www.printerpix.fr"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 hover:scale-105 transition-transform"
+              className="flex flex-col items-center gap-1 hover:scale-105 transition-transform flex-shrink-0"
             >
-              <div className="w-12 h-12 rounded-full overflow-hidden shadow-md border-2 border-white">
-                <img src={frFlag} alt="France" className="w-full h-full object-cover" />
+              <div className="w-8 h-8 rounded-full overflow-hidden shadow-md border border-white">
+                <img src={frFlag} alt="France" className="w-full h-full object-cover scale-150" />
               </div>
-              <span className="text-xs font-medium text-foreground">France</span>
+              <span className="text-xs font-medium text-foreground">FR</span>
             </a>
             <a
               href="https://www.printerpix.it"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 hover:scale-105 transition-transform"
+              className="flex flex-col items-center gap-1 hover:scale-105 transition-transform flex-shrink-0"
             >
-              <div className="w-12 h-12 rounded-full overflow-hidden shadow-md border-2 border-white">
-                <img src={itFlag} alt="Italy" className="w-full h-full object-cover" />
+              <div className="w-8 h-8 rounded-full overflow-hidden shadow-md border border-white">
+                <img src={itFlag} alt="Italy" className="w-full h-full object-cover scale-150" />
               </div>
-              <span className="text-xs font-medium text-foreground">Italy</span>
+              <span className="text-xs font-medium text-foreground">IT</span>
             </a>
             <a
               href="https://www.printerpix.es"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 hover:scale-105 transition-transform"
+              className="flex flex-col items-center gap-1 hover:scale-105 transition-transform flex-shrink-0"
             >
-              <div className="w-12 h-12 rounded-full overflow-hidden shadow-md border-2 border-white">
+              <div className="w-8 h-8 rounded-full overflow-hidden shadow-md border border-white">
                 <img src={esFlag} alt="Spain" className="w-full h-full object-cover" />
               </div>
-              <span className="text-xs font-medium text-foreground">Spain</span>
+              <span className="text-xs font-medium text-foreground">ES</span>
             </a>
             <a
               href="https://www.printerpix.de"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 hover:scale-105 transition-transform"
+              className="flex flex-col items-center gap-1 hover:scale-105 transition-transform flex-shrink-0"
             >
-              <div className="w-12 h-12 rounded-full overflow-hidden shadow-md border-2 border-white">
+              <div className="w-8 h-8 rounded-full overflow-hidden shadow-md border border-white">
                 <img src={deFlag} alt="Germany" className="w-full h-full object-cover" />
               </div>
-              <span className="text-xs font-medium text-foreground">Germany</span>
+              <span className="text-xs font-medium text-foreground">DE</span>
             </a>
             <a
               href="https://www.printerpix.nl"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 hover:scale-105 transition-transform"
+              className="flex flex-col items-center gap-1 hover:scale-105 transition-transform flex-shrink-0"
             >
-              <div className="w-12 h-12 rounded-full overflow-hidden shadow-md border-2 border-white">
+              <div className="w-8 h-8 rounded-full overflow-hidden shadow-md border border-white">
                 <img src={nlFlag} alt="Netherlands" className="w-full h-full object-cover" />
               </div>
-              <span className="text-xs font-medium text-foreground">Netherlands</span>
+              <span className="text-xs font-medium text-foreground">NL</span>
             </a>
             <a
               href="https://www.printerpix.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 hover:scale-105 transition-transform"
+              className="flex flex-col items-center gap-1 hover:scale-105 transition-transform flex-shrink-0"
             >
-              <div className="w-12 h-12 rounded-full overflow-hidden shadow-md border-2 border-white">
+              <div className="w-8 h-8 rounded-full overflow-hidden shadow-md border border-white">
                 <img src={inFlag} alt="India" className="w-full h-full object-cover" />
               </div>
-              <span className="text-xs font-medium text-foreground">India</span>
+              <span className="text-xs font-medium text-foreground">IN</span>
             </a>
           </div>
         </div>
