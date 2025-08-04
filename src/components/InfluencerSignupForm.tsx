@@ -15,7 +15,7 @@ import { Loader2, Instagram, Users, Mail, Package, Globe } from "lucide-react";
 // Flag imports
 import usFlag from "@/assets/flags/us.png";
 import gbFlag from "@/assets/flags/gb.png";
-import frFlag from "@/assets/flags/fr-circular.png";
+import frFlag from "@/assets/flags/fr-full-circle.png";
 import itFlag from "@/assets/flags/it-circular.png";
 import esFlag from "@/assets/flags/es.png";
 import deFlag from "@/assets/flags/de.png";
