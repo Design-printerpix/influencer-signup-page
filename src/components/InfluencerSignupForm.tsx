@@ -423,7 +423,7 @@ export const InfluencerSignupForm = () => {
               className="flex flex-col items-center gap-1 hover:scale-105 transition-transform flex-shrink-0"
             >
               <div className="w-8 h-8 rounded-full overflow-hidden shadow-md border border-white">
-                <img src={frFlag} alt="France" className="w-full h-full object-cover" />
+                <img src={frFlag} alt="France" className="w-full h-full object-cover scale-110" style={{objectPosition: '30% center'}} />
               </div>
               <span className="text-xs font-medium text-foreground">FR</span>
             </a>
@@ -434,7 +434,7 @@ export const InfluencerSignupForm = () => {
               className="flex flex-col items-center gap-1 hover:scale-105 transition-transform flex-shrink-0"
             >
               <div className="w-8 h-8 rounded-full overflow-hidden shadow-md border border-white">
-                <img src={itFlag} alt="Italy" className="w-full h-full object-cover" />
+                <img src={itFlag} alt="Italy" className="w-full h-full object-cover scale-110" style={{objectPosition: '70% center'}} />
               </div>
               <span className="text-xs font-medium text-foreground">IT</span>
             </a>
