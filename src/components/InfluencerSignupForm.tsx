@@ -379,91 +379,74 @@ export const InfluencerSignupForm = () => {
         </Card>
 
         {/* Regional Sites Section */}
-        <div className="mt-8 p-6 bg-card rounded-lg border shadow-soft">
-          <h3 className="text-lg font-semibold text-center mb-4">
+        <div className="mt-8 p-4 bg-card rounded-lg border shadow-soft">
+          <h3 className="text-sm font-medium text-center mb-3 text-muted-foreground">
             Country of residence? Click below to visit your regional site:
           </h3>
-          <div className="grid grid-cols-3 gap-4">
-            <a
-              href="https://www.printerpix.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center p-3 rounded-lg hover:bg-muted transition-colors"
-            >
-              <span className="text-2xl mb-1">india flag</span>
-              <span className="text-sm font-medium text-center">India</span>
-            </a>
-            <a
-              href="https://www.printerpix.de"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center p-3 rounded-lg hover:bg-muted transition-colors"
-            >
-              <span className="text-2xl mb-1">🇩🇪</span>
-              <span className="text-sm font-medium text-center">Germany</span>
-            </a>
-            <a
-              href="https://www.printerpix.it"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center p-3 rounded-lg hover:bg-muted transition-colors"
-            >
-              <span className="text-2xl mb-1">🇮🇹</span>
-              <span className="text-sm font-medium text-center">Italy</span>
-            </a>
+          <div className="flex items-center justify-center gap-3 flex-wrap">
             <a
               href="https://www.printerpix.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center p-3 rounded-lg hover:bg-muted transition-colors"
+              className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"
             >
-              <span className="text-2xl mb-1">🇺🇸</span>
-              <span className="text-sm font-medium text-center">United States</span>
+              <span className="text-lg">🇺🇸</span>
             </a>
             <a
               href="https://www.printerpix.co.uk"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center p-3 rounded-lg hover:bg-muted transition-colors"
+              className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"
             >
-              <span className="text-2xl mb-1">🇬🇧</span>
-              <span className="text-sm font-medium text-center">United Kingdom</span>
-            </a>
-            <a
-              href="https://www.printerpix.es"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center p-3 rounded-lg hover:bg-muted transition-colors"
-            >
-              <span className="text-2xl mb-1">🇪🇸</span>
-              <span className="text-sm font-medium text-center">Spain</span>
-            </a>
-            <a
-              href="https://www.printerpix.nl"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center p-3 rounded-lg hover:bg-muted transition-colors"
-            >
-              <span className="text-2xl mb-1">🇳🇱</span>
-              <span className="text-sm font-medium text-center">Netherlands</span>
-            </a>
-            <a
-              href="https://www.printerpix.ae"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center p-3 rounded-lg hover:bg-muted transition-colors"
-            >
-              <span className="text-2xl mb-1">🇦🇪</span>
-              <span className="text-sm font-medium text-center">UAE</span>
+              <span className="text-lg">🇬🇧</span>
             </a>
             <a
               href="https://www.printerpix.fr"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center p-3 rounded-lg hover:bg-muted transition-colors"
+              className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"
             >
-              <span className="text-2xl mb-1">🇫🇷</span>
-              <span className="text-sm font-medium text-center">France</span>
+              <span className="text-lg">🇫🇷</span>
+            </a>
+            <a
+              href="https://www.printerpix.it"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"
+            >
+              <span className="text-lg">🇮🇹</span>
+            </a>
+            <a
+              href="https://www.printerpix.es"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"
+            >
+              <span className="text-lg">🇪🇸</span>
+            </a>
+            <a
+              href="https://www.printerpix.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"
+            >
+              <span className="text-lg">🇩🇪</span>
+            </a>
+            <a
+              href="https://www.printerpix.nl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"
+            >
+              <span className="text-lg">🇳🇱</span>
+            </a>
+            <a
+              href="https://www.printerpix.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"
+            >
+              <span className="text-lg">🇮🇳</span>
             </a>
           </div>
         </div>
