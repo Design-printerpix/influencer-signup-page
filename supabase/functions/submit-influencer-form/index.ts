@@ -43,7 +43,7 @@ const handler = async (req: Request): Promise<Response> => {
       .from('influencer_applications')
       .insert({
         instagram_username: formData.instagramUsername,
-        follower_count: formData.followerCount,
+        follower_count_range: formData.followerCount, // Store as string range
         traffic_range: formData.trafficRange,
         email: formData.email,
         products_to_promote: formData.productsToPromote,
