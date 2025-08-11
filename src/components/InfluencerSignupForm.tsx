@@ -356,7 +356,8 @@ export const InfluencerSignupForm = () => {
                {/* Contact Notice */}
                <div className="space-y-3">
                  <p className="text-sm leading-5 text-muted-foreground">
-                   We will be contacting you by email
+                   We will be contacting you by email<br />
+                   Please ensure your details are accurate. All information will be verified before onboarding, and incorrect entries may result in removal from the program.
                  </p>
                </div>
 
