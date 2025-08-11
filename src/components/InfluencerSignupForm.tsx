@@ -120,6 +120,8 @@ export const InfluencerSignupForm = () => {
       };
 
       // Submit to Supabase via edge function
+      console.log("Submitting data:", submissionData);
+      
       const response = await fetch(
         "https://rrbbkiaguqmcgwvibiqv.supabase.co/functions/v1/submit-influencer-form",
         {
@@ -131,7 +133,11 @@ export const InfluencerSignupForm = () => {
         }
       );
 
+      console.log("Response status:", response.status);
+      console.log("Response headers:", Object.fromEntries(response.headers.entries()));
+      
       const result = await response.json();
+      console.log("Response result:", result);
       
       if (!response.ok || !result.success) {
         throw new Error(result.error || "Failed to submit form");
