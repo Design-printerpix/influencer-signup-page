@@ -105,6 +105,7 @@ export const InfluencerSignupForm = () => {
   };
 
   const onSubmit = async (data: FormData) => {
+    console.log("Form submission started", data);
     setIsSubmitting(true);
     
     try {
@@ -196,7 +197,7 @@ export const InfluencerSignupForm = () => {
             </div>
           </CardHeader>
           <CardContent className="space-y-6">
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
               {/* Instagram Username */}
               <div className="space-y-2">
                 <Label htmlFor="instagramUsername" className="flex items-center gap-2 font-medium">
